@@ -315,19 +315,21 @@ nav h1 a {
   width: 100%;
 }
 
+#restaurant-container {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
 @media (min-width: 700px) {
   #restaurant-container {
     background: mistyrose;
-    display: grid;
     grid-gap: 10px;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
     'name cuisine'
     'image address'
     'image hours';
-
-    justify-items: center;
-    align-items: center;
   }
 
   #restaurant-name {
@@ -367,7 +369,7 @@ nav h1 a {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 85%));
   justify-items: center;
 }
 #reviews-list li {
@@ -377,13 +379,18 @@ nav h1 a {
   display: block;
   list-style-type: none;
   margin: 0 0 30px;
-  overflow: hidden;
   padding: 5px 10px 10px;
-  position: relative;
+  max-width: 500px;
   width: 85%;
 }
 #reviews-list li p {
   margin: 0 0 10px;
+}
+
+#reviews-list li p:first-child {
+  background: #99AAB5;
+  border-radius: 5px 0 5px 0;
+  padding-left: 2px;
 }
 #restaurant-hours td {
   color: #666;
