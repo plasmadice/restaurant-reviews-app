@@ -80,7 +80,7 @@ nav h1 a {
 /* Display list items side by side */
 #breadcrumb li {
     display: inline;
-    padding-left: 40px;
+    padding-left: 20px;
 }
 
 /* Add a slash symbol (/) before/behind each list item */
@@ -342,6 +342,7 @@ nav h1 a {
 
   #restaurant-img {
     grid-area: image;
+    border-radius: 0 5% 0 5%;
   }
 
   #restaurant-cuisine {
