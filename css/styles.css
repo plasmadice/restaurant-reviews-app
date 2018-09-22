@@ -105,17 +105,44 @@ nav h1 a {
 .filter-options {
   height: 100%;
   background-color: #3397DB;
-
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: repeat(auto-fill, 200px)
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-areas:
+    'h2 neighborhoods cuisines';
 }
+
+.filter-options div {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: auto auto;
+}
+
+@media (max-width: 650px) {
+  .filter-options {
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    grid-gap: 0;
+  }
+
+  .filter-options div {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-options select {
+    margin: 0;
+    padding: 0;
+  }
+}
+
 .filter-options h2 {
+  justify-self: center;
+  align-self: center;
   color: white;
   font-size: 1rem;
   font-weight: normal;
   line-height: 1;
-  margin: 0 20px;
+  margin-top: 10px;
 }
 .filter-options select {
   background-color: white;
@@ -124,7 +151,7 @@ nav h1 a {
   font-size: 11pt;
   height: 35px;
   letter-spacing: 0;
-  margin: 10px;
+  margin: 10px 0;
   padding: 0 10px;
   width: 200px;
 }
