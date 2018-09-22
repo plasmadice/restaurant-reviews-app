@@ -286,6 +286,7 @@ nav h1 a {
 #restaurant-name {
   color: #f18200;
   font-family: Arial,sans-serif;
+  text-align: center;
   font-size: 20pt;
   font-weight: 200;
   letter-spacing: 0;
