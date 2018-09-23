@@ -242,9 +242,10 @@ nav h1 a {
   margin: 0;
   font-size: 11pt;
 }
-#restaurants-list li a {
+#restaurants-list li button {
   background-color: orange;
   border-bottom: 3px solid #eee;
+  border-right: 3px solid #eee;
   color: #fff;
   display: inline-block;
   font-size: 10pt;
@@ -376,6 +377,12 @@ nav h1 a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 85%));
   justify-items: center;
+}
+
+@media (min-width: 1024px) {
+  #reviews-list {
+    grid-template-columns: repeat(2, minmax(300px, 85%));
+  }
 }
 #reviews-list li {
   background-color: #fff;

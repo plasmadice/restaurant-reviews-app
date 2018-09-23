@@ -1,0 +1,1 @@
+Make reviews auto to allow for 3 reviews on same line (for 4k monitors)
