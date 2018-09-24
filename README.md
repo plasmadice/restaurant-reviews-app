@@ -2,7 +2,7 @@
 This project demonstrates several skills. Making a website fully responsive, accessible, and available offline. This project was designed by Udacity for their Front End Nanodegree and Mobile Web Specialist courses
 
 ## How it Works
-To start this project you will need to run a web server. Here are a few options.
+#### To start this project you will need to run a web server. Here are a few options.
 
 1. From inside the new directory, launch a local client server using Python from your terminal and launch the server based on your version of python: 
   * Python 2: python -m SimpleHTTPServer 8000 
@@ -14,6 +14,6 @@ To start this project you will need to run a web server. Here are a few options.
 **Note**: If youa re having issues starting the server you may need reverse the change to the port that I've mentioned above
 
 ### Shoutouts / Resources
-Thanks to [Wes Bos's free CSS Grid](https://cssgrid.io/) for being a great resource.
-[CSS Trix](https://css-tricks.com) for being awesome.
-[Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/) for it's **extremely** useful grid dev tools.
+* Thanks to [Wes Bos's free CSS Grid](https://cssgrid.io/) for being a great resource.
+* [CSS Trix](https://css-tricks.com) for being awesome.
+* [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/) for it's **extremely** useful grid dev tools.
