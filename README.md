@@ -5,11 +5,11 @@ This project demonstrates several skills. Making a website fully responsive, acc
 To start this project you will need to run a web server. Here are a few options.
 
 1. From inside the new directory, launch a local client server using Python from your terminal and launch the server based on your version of python: 
-1.a Python 2: python -m SimpleHTTPServer 8000 
-1.b Python 3: python3 -m http.server 8000
+  * Python 2: python -m SimpleHTTPServer 8000 
+  * Python 3: python3 -m http.server 8000
 2. [VSCode's Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) - My Favorite - Requires additional steps - *Note* - I use VSCode - Once complete you can launch using liveserver as usual
-2.a  **Easiest Method** - in `js/dbhelper.js` on line 11 change `port` to 5500 (default is 8000)
-2.b Hard Mode - In VSCode settings change `liveServer.settings.port` to 8000
+  *  **Easiest Method** - in `js/dbhelper.js` on line 11 change `port` to 5500 (default is 8000)
+  * Hard Mode - In VSCode settings change `liveServer.settings.port` to 8000
 
 **Note**: If youa re having issues starting the server you may need reverse the change to the port that I've mentioned above
 
