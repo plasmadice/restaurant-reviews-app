@@ -139,7 +139,6 @@ createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
 
   const labelText = `${restaurant.name.split(' ').join('').toLowerCase()}-label`;
-  console.log(restaurant);
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';

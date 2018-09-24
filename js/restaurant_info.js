@@ -154,7 +154,6 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  * Create review HTML and add it to the webpage.
  */
 createReviewHTML = (review) => {
-  console.log(review);
   const li = document.createElement('li');
  
   // Using a combination of name and comments length to prevent duplicates
