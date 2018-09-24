@@ -17,8 +17,10 @@
       <h1><a href="/">Restaurant Reviews</a></h1>
     </nav>
     <!-- Beginning breadcrumb -->
-    <ul id="breadcrumb" >
-      <li><a href="/">Home</a></li>
+    <ul id="breadcrumb" aria-label="Breadcrumb" aria-label="aria-breadcrumb">
+      <li>
+        <a href="/">Home</a>
+      </li>
     </ul>
     <!-- End breadcrumb -->
     <!-- End nav -->
@@ -28,22 +30,26 @@
   <!-- Beginning main -->
   <main id="maincontent">
     <!-- Beginning map -->
-    <section id="map-container">
+    <section id="map-container" aria-hidden="true">
       <div id="map"></div>
     </section>
     <!-- End map -->
     <!-- Beginning restaurant -->
-    <section id="restaurant-container">
-      <h1 id="restaurant-name"></h1>
-      <img id="restaurant-img">
-      <p id="restaurant-cuisine"></p>
-      <p id="restaurant-address"></p>
-      <table id="restaurant-hours"></table>
+    <section id="restaurant-container" tabindex="0" aria-labelledby="restaurant-container-label">
+      <h1 id="restaurant-name" tabindex="0"></h1>
+      <img id="restaurant-img" tabindex="0">
+      <p id="restaurant-cuisine" tabindex="0" aria-labelledby="cuisine-label"></p>
+      <label id="cuisine-label" class="aria-labels"></label>
+      <p id="restaurant-address" tabindex="0" aria-labelledby="address-label"></p>
+      <label id="address-label" class="aria-labels"></label>
+      <table id="restaurant-hours" tabindex="0" aria-labelledby="hours-label"></table>
+      <label id="hours-label" class="aria-labels">Restaurant Hours</label>
     </section>
     <!-- end restaurant -->
     <!-- Beginning reviews -->
     <section id="reviews-container">
-      <ul id="reviews-list"></ul>
+      <ul id="reviews-list" tabindex="0" aria-labelledby="reviews-list-label"></ul>
+      <label id="reviews-list-label" class="aria-labels">Reviews</label>
     </section>
     <!-- End reviews -->
   </main>

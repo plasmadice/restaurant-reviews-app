@@ -138,8 +138,12 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
 
+  const labelText = `${restaurant.name.split(' ').join('').toLowerCase()}-label`;
+  console.log(restaurant);
+
   const image = document.createElement('img');
   image.className = 'restaurant-img';
+  image.alt = `${restaurant.name} restaurant marketing photo`;
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
@@ -157,12 +161,21 @@ createRestaurantHTML = (restaurant) => {
 
   const more = document.createElement('button');
   more.innerHTML = 'View Details';
-  more.href = 
+
+  /* Add label to button as well as onclick attribute */
+  more.setAttribute('aria-labelledby', labelText)
   more.onclick = () => {
     const url = DBHelper.urlForRestaurant(restaurant);
     window.location = url;
   }
   li.append(more)
+
+  /* Create label attribute with info */
+  const label = document.createElement('label');
+  label.id = labelText;
+  label.classList.add('aria-labels');
+  label.innerText = `Link: Restaurant Name: ${restaurant.name} Neighborhood: ${restaurant.neighborhood} Address: ${restaurant.address}`;
+  li.append(label);
 
   return li
 }
