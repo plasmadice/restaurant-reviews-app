@@ -130,9 +130,17 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   if (!reviews) {
     const noReviews = document.createElement('p');
     noReviews.innerHTML = 'No reviews yet!';
+    noReviews.setAttribute('aria-labelledby', 'no-reviews-label');
     container.appendChild(noReviews);
+
+    /* Label for when there are no reviews */
+    const noReviewsLabel = document.createElement('label');
+    noReviewsLabel.innerText = 'No reviews yet';
+    noReviewsLabel.id = 'no-reviews-label'
+    noReviewsLabel.classList.add('aria-labels');
     return;
   }
+
   const ul = document.getElementById('reviews-list');
   reviews.forEach(review => {
     const li = createReviewHTML(review);
@@ -146,22 +154,52 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  * Create review HTML and add it to the webpage.
  */
 createReviewHTML = (review) => {
+  console.log(review);
   const li = document.createElement('li');
+ 
+  // Using a combination of name and comments length to prevent duplicates
+  li.setAttribute('aria-labelledby', `name-${review.name+review.comments.length}-label`);
+
   const name = document.createElement('p');
   name.innerHTML = review.name;
+  name.setAttribute('aria-labelledby', `name-${review.name+review.comments.length}-label`);
+  name.setAttribute('tabindex', '0');
+
+  const nameLabel = document.createElement('label');
+  nameLabel.innerText = `Reviewer: ${review.name}`;
+  nameLabel.id = `name-${review.name+review.comments.length}-label`;
+  nameLabel.classList.add('aria-labels');
+
+  li.appendChild(nameLabel);
   li.appendChild(name);
 
   const date = document.createElement('p');
   date.innerHTML = review.date;
+  date.setAttribute('tabindex', '0');
+  date.setAttribute('aria-labelledby', `date-${review.name+review.comments.length}-label`);
   li.appendChild(date);
+
+  const dateLabel = document.createElement('label');
+  dateLabel.innerText = `Date: ${review.date}`;
+  dateLabel.id = `date-${review.name+review.comments.length}-label`;
+  dateLabel.classList.add('aria-labels');
+  li.appendChild(dateLabel);
 
   const rating = document.createElement('p');
   rating.innerHTML = `Rating: ${review.rating}`;
+  rating.setAttribute('tabindex', '0');
   li.appendChild(rating);
 
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
+  comments.setAttribute('tabindex', '0');
+  // comments.setAttribute('aria-labelledby', `comments-${review.name+review.comments.length}-label`);
   li.appendChild(comments);
+
+  // const commentsLabel = document.createElement('label');
+  // commentsLabel.innerText = 
+  // commentsLabel.id = `comments-${review.name+review.comments.length}-label`;
+  // commentsLabel.classList.add('aria-labels');
 
   return li;
 }
