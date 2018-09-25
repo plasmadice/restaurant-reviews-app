@@ -146,7 +146,7 @@ createRestaurantHTML = (restaurant) => {
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h3');
   name.innerHTML = restaurant.name;
   li.append(name);
 
@@ -176,7 +176,7 @@ createRestaurantHTML = (restaurant) => {
   label.innerText = `Link: Restaurant Name: ${restaurant.name} Neighborhood: ${restaurant.neighborhood} Address: ${restaurant.address}`;
   li.append(label);
 
-  return li
+  return li;
 }
 
 /**
