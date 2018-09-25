@@ -20,7 +20,7 @@
       <!-- Beginning breadcrumb -->
       <!-- I'm not entirely sure if these attributes 
         are sufficient for the breadcrumb -->
-      <ul id="breadcrumb" aria-label="Breadcrumb" aria-label="aria-breadcrumb">
+      <ul id="breadcrumb" aria-label="Breadcrumb" role="navigation">
         <li>
           <a href="/">Home</a>
         </li>
@@ -34,7 +34,8 @@
     <main id="maincontent">
       <!-- Beginning map -->
       <section id="map-container" aria-hidden="true">
-        <div id="map"></div>
+        <div id="map" role="application" aria-labelledby="aria-map-description" aria-hidden="true"></div>
+        <label id="aria-map-description" class="aria-labels">map user interface</label>
       </section>
       <!-- End map -->
       <!-- Beginning restaurant -->
