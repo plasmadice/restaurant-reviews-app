@@ -6,7 +6,7 @@ class DBHelper {
    * Fetch all restaurants.
    */
   static fetchRestaurants(callback) {
-    fetch("../restaurants.json")
+    fetch(`..${window.location.pathname}data/restaurants.json`)
       .then(res => {
         if (res.status === 200) {
           return res.json();
