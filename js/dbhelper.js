@@ -5,8 +5,15 @@ class DBHelper {
   /**
    * Fetch all restaurants.
    */
+  static path() {
+    if (window.location.host === "plasmadice.github.io") {
+      return "/restaurant-reviews-app/";
+    } else {
+      return "/";
+    }
+  }
   static fetchRestaurants(callback) {
-    fetch(`..${window.location.pathname}data/restaurants.json`)
+    fetch(`..${DBHelper.path()}data/restaurants.json`)
       .then(res => {
         if (res.status === 200) {
           return res.json();
@@ -143,14 +150,14 @@ class DBHelper {
    * Restaurant page URL.
    */
   static urlForRestaurant(restaurant) {
-    return `./restaurant.html?id=${restaurant.id}`;
+    return `${window.location.pathname}restaurant.html?id=${restaurant.id}`;
   }
 
   /**
    * Restaurant image URL.
    */
   static imageUrlForRestaurant(restaurant) {
-    return `/img/${restaurant.photograph}`;
+    return `${window.location.pathname}img/${restaurant.photograph}`;
   }
 
   /**
